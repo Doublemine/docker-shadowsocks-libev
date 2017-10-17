@@ -49,5 +49,4 @@ RUN set -ex && \
   npm install -g shadowsocks-manager &&\
   npm cache clean -f
   
-
-ENTRYPOINT ["/usr/bin/ssmgr"]
+ 
