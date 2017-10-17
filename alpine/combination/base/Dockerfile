@@ -49,3 +49,7 @@ RUN set -ex && \
   npm install -g shadowsocks-manager &&\
   npm install -g pm2 && \
   npm cache clean -f
+  
+ ONBUILD COPY ss.yml /root/ss.yml
+ ONBUILD RUN pm2 --name "ssmgr" -f start ssmgr -x -- -c /root/ss.yml
+ CMD ss-manager -m aes-256-gcm -t 3600 --fast-open -u -d 8.8.8.8 -d 8.8.4.4 -v --manager-address 127.0.0.1:4000  --plugin obfs-server --plugin-opts "obfs=tls"
