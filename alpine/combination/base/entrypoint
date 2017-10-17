@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/sh
 
 IMAGE_NAME="doublemine/shadowsocks"
 
@@ -67,7 +67,6 @@ done
 
 if [ -z "$PORT" -o -z "$ENCRYPTION" ]; then
   echo "$IMAGE_NAME: insufficient arguments."
-  echo "$PORT    <-->  $ENCRYPTION"
   print_usage
   exit 1
 fi
