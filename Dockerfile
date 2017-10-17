@@ -42,6 +42,7 @@ RUN set -ex && \
   )" && \
   apk add --no-cache --virtual .run-deps $runDeps && \
   apk del .build-deps && \
-  rm -rf /tmp/*
+  rm -rf /tmp/*  && \
+  apk add --no-cache rng-tools
 
 ENTRYPOINT ["/usr/bin/ss-manager"]
