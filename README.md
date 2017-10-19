@@ -61,7 +61,7 @@ There are some demo about different image：
 
 step 1:
 
-create a file named `ss.yml`,the content just like above:
+create a file named `ss.yml`,the content just like below:
 
 ```yml
 type: s
