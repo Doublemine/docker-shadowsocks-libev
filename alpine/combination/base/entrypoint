@@ -46,7 +46,7 @@ while true; do
     -p|--port)                PORT="--manager-address 127.0.0.1:$2";                shift 2;;
     --dns1)                   DNS1="-d $2";             shift 2;;
     --dns2)                   DNS2="-d $2";             shift 2;;
-    --obfs)                   OBFS="--plugin obfs-server --plugin-opts 'obfs=$2'";             shift 2;;
+    --obfs)                   OBFS="--plugin obfs-server --plugin-opts obfs=$2";             shift 2;;
     --name)                   NAME="$2";             shift 2;;
 
 
