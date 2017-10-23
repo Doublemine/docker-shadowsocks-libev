@@ -1,7 +1,7 @@
 #### docker image mirror
 
 ```bash
-curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s https://registry.docker-cn.com
+curl -sSL https://raw.githubusercontent.com/Doublemine/docker-shadowsocks-libev/master/set_mirror.sh | sh -s https://registry.docker-cn.com
 ```
 
 
