@@ -1,3 +1,10 @@
+#### docker image mirror
+
+```bash
+curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s https://registry.docker-cn.com
+```
+
+
 This is the shadowsocks-libev with simple-obfs docker image. It's based on alpine and only 5MB.
 
 
