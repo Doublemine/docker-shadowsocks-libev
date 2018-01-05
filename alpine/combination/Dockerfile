@@ -11,6 +11,7 @@ RUN set -ex && \
                                 mbedtls-dev \
                                 pcre-dev \
                                 tar \
+                                python \
                                 c-ares-dev  \
                                 openssl-dev \
                                 udns-dev \
