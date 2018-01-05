@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.6
 RUN set -ex && \
     apk add --no-cache --virtual .build-deps \
                                 autoconf \
@@ -11,7 +11,6 @@ RUN set -ex && \
                                 mbedtls-dev \
                                 pcre-dev \
                                 tar \
-                                python \
                                 c-ares-dev  \
                                 openssl-dev \
                                 udns-dev \
