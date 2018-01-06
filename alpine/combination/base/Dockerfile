@@ -1,5 +1,6 @@
 FROM alpine
 RUN set -ex && \
+    sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories &&\
     apk add --no-cache --virtual .build-deps \
                                 autoconf \
                                 build-base \
@@ -45,6 +46,7 @@ RUN set -ex && \
   rm -rf /tmp/*  && \
   apk add --no-cache rng-tools  \
   nodejs \
+  python \
   nodejs-npm && \
   npm install -g shadowsocks-manager &&\
   npm install -g pm2 && \
