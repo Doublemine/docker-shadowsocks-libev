@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.6
 RUN set -ex && \
     sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories &&\
     apk add --no-cache --virtual .build-deps \
