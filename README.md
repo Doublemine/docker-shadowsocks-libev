@@ -1,3 +1,5 @@
+### Docker for [Shadowsocks](https://github.com/shadowsocks/)  [![Build Status](https://travis-ci.org/Doublemine/docker-shadowsocks-libev.svg?branch=master)](https://travis-ci.org/Doublemine/docker-shadowsocks-libev)
+
 #### docker image mirror
 
 ```bash
