@@ -7,7 +7,9 @@ before_install:
 
 
 script:
-  - docker build -t $DOCKER_USERNAME/ss-libev -f ss-libev/Dockerfile .
+  - docker build -t $DOCKER_USERNAME/ss-libev -f ss-libev/Dockerfile . 
+  - docker build -t $DOCKER_USERNAME/ss-manager -f manager/Dockerfile .
 
 after_success:
   - docker push $DOCKER_USERNAME/ss-libev
+  - docker push $DOCKER_USERNAME/ss-manager
