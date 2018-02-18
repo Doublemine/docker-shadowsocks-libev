@@ -32,8 +32,6 @@ RUN set -ex && \
    ./configure && make && \
    make install && \
    cd .. && \
-
-
    runDeps="$( \
     scanelf --needed --nobanner /usr/bin/ss-* \
         | awk '{ gsub(/,/, "\nso:", $2); print "so:" $2 }' \

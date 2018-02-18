@@ -1,5 +1,22 @@
 #### docker image mirror
 
+
+This is the shadowsocks-libev with simple-obfs docker image. It's based on alpine.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```bash
 curl -sSL https://raw.githubusercontent.com/Doublemine/docker-shadowsocks-libev/master/set_mirror.sh | sh -s https://registry.docker-cn.com
 ```
