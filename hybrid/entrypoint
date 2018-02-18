@@ -43,7 +43,7 @@ while true; do
   case "$1" in
     -m|--encrypt-method)      ENCRYPTION="-m $2";       shift 2;;
     -t|--timeout)             TIMEOUT="-t $2";          shift 2;;
-    -p|--port)                PORT="--manager-address 127.0.0.1:$2";                shift 2;;
+    -p|--port)                PORT="$2";                shift 2;;
     --dns1)                   DNS1="-d $2";             shift 2;;
     --dns2)                   DNS2="-d $2";             shift 2;;
     --obfs)                   OBFS="--plugin obfs-server --plugin-opts obfs=$2";             shift 2;;
@@ -84,15 +84,14 @@ if [ -z $PORT ]; then
 fi
 
 if [ -z $MGR_PORT ]; then
-  sed -i "s#4001#$PORT#g" /root/ss.yml
+  sed -i "s#4001#$MGR_PORT#g" /root/ss.yml
 fi
 
 if [ -z $MGR_PWD ]; then
-  sed -i "s#123456#$PORT#g" /root/ss.yml
+  sed -i "s#123456#$MGR_PWD#g" /root/ss.yml
 fi
 
-
-
+PORT="--manager-address 127.0.0.1:$PORT"
 
 $PM2 --name "$NAME" -f start ssmgr -x -- -c /root/ss.yml
 $SHADOWSOCKS $ENCRYPTION $TIMEOUT $FAST_OPEN $UDP_RELAY $DNS1 $DNS2 $VERBOSE $PORT $OBFS
