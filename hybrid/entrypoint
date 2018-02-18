@@ -79,15 +79,15 @@ echo "  docker ps -ql | xargs docker logs -f"
 set -e \
 && cp -f /root/ss.yml.template /root/ss.yml
 
-if [ -z $PORT ]; then
+if [  $PORT ]; then
   sed -i "s#6001#$PORT#g" /root/ss.yml
 fi
 
-if [ -z $MGR_PORT ]; then
+if [  $MGR_PORT ]; then
   sed -i "s#4001#$MGR_PORT#g" /root/ss.yml
 fi
 
-if [ -z $MGR_PWD ]; then
+if [  $MGR_PWD ]; then
   sed -i "s#123456#$MGR_PWD#g" /root/ss.yml
 fi
 
