@@ -11,5 +11,5 @@ COPY hybrid/ss.yml.template /root/ss.yml.template
 VOLUME  /root/.ssmgr
 
 
-COPY entrypoint /
+COPY hybrid/entrypoint /
 ENTRYPOINT ["/entrypoint"]
