@@ -6,8 +6,8 @@ RUN set -ex && \
   npm install -g shadowsocks-manager &&\
   npm cache clean -f
 
-  
-COPY ss.yml.template /root/ss.yml.template
+
+COPY hybrid/ss.yml.template /root/ss.yml.template
 VOLUME  /root/.ssmgr
 
 
