@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.6
 RUN set -ex && \
     apk add --no-cache --virtual .build-deps \
                                 autoconf \
