@@ -11,12 +11,10 @@ export VERSION_SHADOWSOCKS_LIBEV=$(get_latest_release shadowsocks/shadowsocks-li
 export VERSION_V2RAY_PLUGIN=$(get_latest_release shadowsocks/v2ray-plugin)
 
 docker build -t $DOCKER_USERNAME/shadowsocks-libev:$VERSION_SHADOWSOCKS_LIBEV -f shadowsocks/Dockerfile .
-docker build -t $DOCKER_USERNAME/shadowsocks-manager:$VERSION_V2RAY_PLUGIN -f shadowsocks-manager/Dockerfile .
+docker build -t $DOCKER_USERNAME/shadowsocks-manager -f shadowsocks-manager/Dockerfile .
 
 docker push $DOCKER_USERNAME/shadowsocks-libev:$VERSION_SHADOWSOCKS_LIBEV
 docker tag $DOCKER_USERNAME/shadowsocks-libev:$VERSION_SHADOWSOCKS_LIBEV $DOCKER_USERNAME/shadowsocks-libev:latest
 docker push $DOCKER_USERNAME/shadowsocks-libev:latest
 
-docker push $DOCKER_USERNAME/shadowsocks-manager:$VERSION_V2RAY_PLUGIN
-docker tag $DOCKER_USERNAME/shadowsocks-manager:$VERSION_V2RAY_PLUGIN $DOCKER_USERNAME/shadowsocks-manager:latest
-docker push $DOCKER_USERNAME/shadowsocks-manager:$VERSION_V2RAY_PLUGIN
+docker push $DOCKER_USERNAME/shadowsocks-manager
