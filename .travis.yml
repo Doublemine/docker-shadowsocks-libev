@@ -2,16 +2,12 @@ sudo: required
 services:
   - docker
 before_install:
-  - docker pull alpine:3.6
+  - docker pull alpine:3.8
   - echo $DOCKER_PWD | docker login -u $DOCKER_USERNAME --password-stdin
-
+  - chmod +x build.sh
 
 script:
-  - docker build -t $DOCKER_USERNAME/ss-libev -f ss-libev/Dockerfile . 
-  - docker build -t $DOCKER_USERNAME/ss-manager -f manager/Dockerfile .
-  - docker build -t $DOCKER_USERNAME/ss-hybrid -f hybrid/Dockerfile .
+  - ./build.sh
 
-after_success:
-  - docker push $DOCKER_USERNAME/ss-libev
-  - docker push $DOCKER_USERNAME/ss-manager
-  - docker push $DOCKER_USERNAME/ss-hybrid
+notifications:
+  email: false
